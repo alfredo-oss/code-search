@@ -1,0 +1,3 @@
+# ignoring environment files
+/venv/
+/src/core/env/
