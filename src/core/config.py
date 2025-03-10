@@ -10,7 +10,8 @@ class Settings(BaseSettings):
     DATABASE_NAME: str
     DATABASE_USER: str
     TABLE_NAME: str
-    
+    FIELDS: str
+
     class Config:
         env_file = "env/.env"
 

@@ -1,5 +1,6 @@
 from core.config import settings 
-from schemas.input import In
+from src.schemas.input import InputSchema
+from fastapi import UploadFile
 import psycopg2
 
 # connect to postgreSQL
@@ -14,11 +15,11 @@ class DataBase:
         except:
             raise RuntimeError("database failed to connect")
         
-    def insert_large_object(self, **kwargs) -> str:
+    def insert_large_object(self, data: InputSchema, file: UploadFile) -> str:
             CODE_POST_QUERY = f"""
-                INSERT INTO {settings.TABLE_NAME} ({kwargs.get("project")}, {kwargs.get("filename")}, {kwargs.get("modification")}, {kwargs.get("file")})
-                VALUES ({kwargs.get("filename")}, lo_import('{kwargs.get("path_to_file")}'));
+                INSERT INTO {settings.TABLE_NAME} {settings.FIELDS}
+                VALUES ({data.project}, {file.filename}, {data.time}, lo_import('/tmp/{file.filename}'));
             """
-
+            self.cursor.execute(CODE_POST_QUERY)
         
 db = DataBase()
