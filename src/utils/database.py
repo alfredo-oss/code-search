@@ -1,5 +1,5 @@
 from core.config import settings 
-from src.schemas.input import InputSchema
+from schemas.input import InputSchema
 from fastapi import UploadFile
 import psycopg2
 
