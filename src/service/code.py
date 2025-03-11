@@ -6,6 +6,7 @@ from datetime import datetime
 
 class Code:
     async def track(self, data: InputSchema, file: UploadFile):
-        data.time = str(datetime.now())
+        now = datetime.now()
+        data.time = f"{now.year}-{now.month}-{now.day}"
         db.insert_large_object(data, file)
 code_instance = Code()
