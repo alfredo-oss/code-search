@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 class OutputSchema(BaseModel):
-    code: str
+    code: int
     message: str

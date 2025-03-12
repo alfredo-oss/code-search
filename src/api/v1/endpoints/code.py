@@ -28,3 +28,17 @@ async def process_input(
         message="OK"
     )
 
+@router.get("/code/{project_name}")
+async def get_project_status(
+    project_name: str
+    ):
+    print("querying the database...")
+    try:
+        response = await code.retrieve(project_name)
+        print(f"got response: {response}")
+    except RuntimeError as e:
+        print(f"something went wrong: {e}")
+        raise HTTPException(status_code=500)
+    return response
+
+

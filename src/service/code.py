@@ -9,4 +9,8 @@ class Code:
         now = datetime.now()
         data.time = f"{now.year}-{now.month}-{now.day}"
         db.insert_large_object(data, file)
+
+    async def retrieve(self, project: str):
+        info = db.retrieve_info(project)
+        return info
 code_instance = Code()
