@@ -1,4 +1,62 @@
 # ignoring environment files
 **/__pycache__
-/venv/
-/src/core/env/
+backend/venv/
+backend/src/core/env/
+
+# Dependency directories
+codesearch-front/node_modules/
+codesearch-front/.yarn/
+codesearch-front/.pnp/
+codesearch-front/.pnp.js
+
+# Build directories
+codesearch-front/build/
+codesearch-front/dist/
+codesearch-front/.cache/
+codesearch-front/.next/
+codesearch-front/out/ # If using Next.js
+
+# Logs & debugging
+codesearch-front/npm-debug.log*
+codesearch-front/yarn-debug.log*
+codesearch-front/yarn-error.log*
+codesearch-front/pnpm-debug.log*
+codesearch-front/lerna-debug.log*
+codesearch-front/.dockerignore
+
+# Editor settings
+codesearch-front/.vscode/
+codesearch-front/.idea/
+codesearch-front/*.suo
+codesearch-front/*.ntvs*
+codesearch-front/*.njsproj
+codesearch-front/*.sln
+codesearch-front/*.sw?
+
+# System files
+codesearch-front/.DS_Store
+codesearch-front/Thumbs.db
+
+# Environment variables
+codesearch-front/.env
+codesearch-front/.env.local
+codesearch-front/.env.development.local
+codesearch-front/.env.test.local
+codesearch-front/.env.production.local
+
+# Coverage & test results
+codesearch-front/coverage/
+codesearch-front/*.lcov
+codesearch-front/*.log
+codesearch-front/jest/
+codesearch-front/cypress/videos/
+codesearch-front/cypress/screenshots/
+
+# Miscellaneous
+codesearch-front/*.bak
+codesearch-front/*.swp
+codesearch-front/*.swo
+codesearch-front/*.patch
+codesearch-front/tmp/
+codesearch-front/temp/
+
