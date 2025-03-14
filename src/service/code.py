@@ -16,5 +16,8 @@ class Code:
     
     async def retrieve_content(self, project: str):
         info = db.retrieve_binary_content(project)
+        print(f"INFO: {info}")
+        info = info[0].tobytes()
+        info = info.decode("utf-8")
         return info
 code_instance = Code()
